@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import {
 	BrowserRouter as Router,
-	Switch,
+	Routes ,
 	Route,
 	Link,
-	NavLink,
-} from "react-router-dom";
+	NavLink
+  } from "react-router-dom";
 
 import Card1 from "./Components/Card1.jsx";
 import Card2 from "./Components/Card2.jsx";
@@ -16,7 +16,6 @@ import Card6 from "./Components/Card6.jsx";
 
 export default function App() {
 	return (
-		<>
 			<Router>
 				<div className="mt-4 text-center container px-5 mx-auto grid grid-cols-10 divide-x divide-gray-500">
 					<NavLink to="/card1" className="mr-2 pt-2 px-4 ">
@@ -38,28 +37,19 @@ export default function App() {
 						Card 6
 					</NavLink>
 				</div>
+				<hr />
 
-				<Switch>
-					<Route path="/card1" exact>
-						<Card1 />
-					</Route>
-					<Route path="/card2" exact>
-						<Card2 />
-					</Route>
-					<Route path="/card3" exact>
-						<Card3 />
-					</Route>
-					<Route path="/card4" exact>
-						<Card4 />
-					</Route>
-					<Route path="/card5" exact>
-						<Card5 />
-					</Route>
-					<Route path="/card6" exact>
-						<Card6 />
-					</Route>
-				</Switch>
+				<Routes >
+					<Route path="/card1" element={ <Card1/> } />
+					<Route path="/card2" element={ <Card2/> } />
+					<Route path="/card3" element={ <Card3/> } />
+					<Route path="/card4" element={ <Card4/> } />
+					<Route path="/card5" element={ <Card4/> } />
+					<Route path="/card6" element={ <Card6/> } />
+				</Routes >
+
+				
 			</Router>
-		</>
+		
 	);
 }
